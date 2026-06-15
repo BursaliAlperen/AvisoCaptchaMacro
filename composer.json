@@ -1,7 +1,7 @@
 {
-    "name": "bursalialperen/avisocaptcha",
-    "description": "Waryono hCaptcha Solver API for Aviso",
-    "require": {
-        "php": "^8.0"
-    }
+  "name": "bursalialperen/avisocaptcha",
+  "description": "Aviso Captcha Solver API",
+  "require": {
+    "php": "^8.0"
+  }
 }
