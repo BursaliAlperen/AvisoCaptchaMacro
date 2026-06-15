@@ -1,16 +1,10 @@
-FROM php:8.2-apache
+FROM php:8.2-cli
 
-RUN a2enmod rewrite
+WORKDIR /app
 
-WORKDIR /var/www/html
+COPY . /app/
 
-COPY . /var/www/html/
-
-# Render PORT env variable'ını kullan
 ENV PORT=80
 EXPOSE 80
 
-# Apache'i PORT env variable ile başlat
-CMD sed -i "s/Listen 80/Listen ${PORT}/" /etc/apache2/ports.conf && \
-    sed -i "s/:80/:${PORT}/" /etc/apache2/sites-enabled/000-default.conf && \
-    apache2-foreground
+CMD php -S 0.0.0.0:$PORT captcha_solver.php
